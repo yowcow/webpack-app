@@ -1,2 +1,7 @@
+'use strict';
+
 require("./style.css");
-document.write(require("./content.js"));
+
+var hello = require('./content.js');
+
+document.getElementById('title').innerHTML = hello({ name: "Hoge" });
