@@ -1,5 +1,10 @@
-require("./style.css");
+require("./style.css")
 
-var hello = require('./content.js')
+var hello    = require('./content.js')
+var React    = require('react')
+var ReactDOM = require('react-dom')
 
-document.getElementById('title').innerHTML = hello({ name: "Hoge" })
+ReactDOM.render(
+    <em>{ hello({ name: "<script>alert(true)</script>" }) }</em>,
+    document.getElementById('title')
+)

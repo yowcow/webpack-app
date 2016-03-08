@@ -3,5 +3,11 @@
 require("./style.css");
 
 var hello = require('./content.js');
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-document.getElementById('title').innerHTML = hello({ name: "Hoge" });
+ReactDOM.render(React.createElement(
+    'em',
+    null,
+    hello({ name: "<script>alert(true)</script>" })
+), document.getElementById('title'));
