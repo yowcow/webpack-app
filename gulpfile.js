@@ -4,7 +4,7 @@ var mocha   = require('gulp-mocha');
 var babel_compiler = require('babel-core/register');
 
 gulp.task('webpack', function () {
-    gulp.src('./src/*.js')
+    gulp.src('./src/*.es6')
         .pipe(webpack(require('./webpack.config.js')))
         .pipe(gulp.dest('./dist/'));
 });
@@ -19,7 +19,7 @@ gulp.task('mocha', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('src/*.js', ['webpack']);
+    gulp.watch('src/*.es6', ['webpack']);
     gulp.watch('test/*.es6', ['mocha']);
 });
 
