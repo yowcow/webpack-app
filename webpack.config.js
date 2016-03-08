@@ -2,7 +2,7 @@ var WebPack = require('webpack');
 
 module.exports = {
   entry: {
-    app: './src/app.js',
+    app: './src/app.es6',
   },
   output: {
     path:              __dirname,
