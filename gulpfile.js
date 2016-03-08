@@ -1,21 +1,19 @@
-//require('babel-core/register');
-
 var gulp    = require('gulp');
 var webpack = require('gulp-webpack');
 var babel   = require('gulp-babel');
 var mocha   = require('gulp-mocha');
 var babel_compiler = require('babel-core/register');
 
-gulp.task('webpack', function () {
-    gulp.src('./src/*.js')
-        .pipe(webpack(require('./webpack.config.js')))
-        .pipe(gulp.dest('./dist/'));
-});
-
 gulp.task('babel', function () {
     gulp.src('./src/*.es6')
         .pipe(babel())
         .pipe(gulp.dest('./src/'));
+});
+
+gulp.task('webpack', function () {
+    gulp.src('./src/*.js')
+        .pipe(webpack(require('./webpack.config.js')))
+        .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('mocha', function () {
@@ -33,4 +31,4 @@ gulp.task('watch', function () {
     gulp.watch('test/*.es6', ['mocha']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['mocha', 'babel', 'webpack', 'watch']);
