@@ -7,5 +7,8 @@ What's going on here:
 
 + WebPack
 + Babel (ES6)
++ React
 + Mocha
 + Gulp
+
+https://facebook.github.io/react/docs/tutorial.html
